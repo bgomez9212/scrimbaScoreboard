@@ -1,27 +1,37 @@
 <html>
-    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
-        <div class="container">
-            <div class="column">
-                <h3>HOME</h3>
-                <h2 id="homescore-el">0</h2>
-                <div>
-                    <button id='home+1' onclick="homeOne()">+1</button>
-                    <button id='home+2' onclick="homeTwo()">+2</button>
-                    <button id='home+3' onclick="homeThree()">+3</button>
+        <div id="container" class="container">
+            <div class="scores">
+                <div class="hometeam">
+                    <h3>HOME</h3>
+                    <h1 id="homescore" class="score">0</h1>
+                    <div class="score-buttons">
+                        <button class="scoring" value="1" onclick=addHomeScore(this.value)>+1</button>
+                        <button class="scoring" value="2" onclick=addHomeScore(this.value)>+2</button>
+                        <button class="scoring" value="3" onclick=addHomeScore(this.value)>+3</button>
+                    </div>
+                </div>
+                <div class="awayteam">
+                    <h3>GUEST</h3>
+                    <h1 id="awayscore" class="score">0</h1>
+                    <div class="score-buttons">
+                        <button class="scoring" value="1" onclick=addAwayScore(this.value)>+1</button>
+                        <button class="scoring" value="2" onclick=addAwayScore(this.value)>+2</button>
+                        <button class="scoring" value="3" onclick=addAwayScore(this.value)>+3</button>
+                    </div>
                 </div>
             </div>
-            <div class="column">
-                <h3>GUEST</h3>
-                <h2 id="guestscore-el">0</h2>
-                <div>
-                    <button id='guest+1' onclick="guestOne()">+1</button>
-                    <button id='guest+2' onclick="guestTwo()">+2</button>
-                    <button id='guest+3' onclick="guestThree()">+3</button>
-                </div>
+            <div class="gameoptions">
+                <button id="endgame">END GAME</button>
             </div>
+        </div>
+        <div id="end-screen">
+            <h1 id="winning-message"></h1>
+            <button id="newGame">Start New Game</button>
         </div>
         <script src="index.js"></script>
     </body>
